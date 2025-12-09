@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Qur'ān Al-Karīm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-icon">📖</div>
+        <h1>Al-Qur'ān Al-Karīm</h1>
+        <p class="surah-count">Nombre de sourates : 114</p>
+      </header>
+
+      <div class="controls">
+        <div class="select-wrapper">
+          <select id="reciterSelect">
+            <option value="AbdulBaset_AbdulSamad">AbdulBaset AbdulSamad</option>
+            <option value="Abdul_Basit_Murattal">Abdul Basit Murattal</option>
+            <option value="Abdur_Rahman_as-Sudais">
+              Abdur-Rahman as-Sudais
+            </option>
+            <option value="Mishary_Rashid_Alafasy">
+              Mishary Rashid Alafasy
+            </option>
+            <option value="Sa'ud_ash-Shuraym">Sa'ud ash-Shuraym</option>
+          </select>
+        </div>
+
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Rechercher une sourate"
+          />
+        </div>
+
+        <div class="select-wrapper">
+          <select id="sortSelect">
+            <option value="original">Trier par longueur</option>
+            <option value="shortest">Plus courtes d'abord</option>
+            <option value="longest">Plus longues d'abord</option>
+          </select>
+        </div>
+
+        <button class="surprise-btn" id="surpriseBtn">Surprends-moi 😊</button>
+      </div>
+
+      <div class="loaded-message" id="loadedMessage">
+        Sourates chargées pour
+        <span id="reciterName">AbdulBaset AbdulSamad</span>.
+      </div>
+
+      <div id="loading" class="loading">Chargement...</div>
+      <div id="error" class="error" style="display: none"></div>
+
+      <div id="surahContainer" class="surah-container">
+        <!-- Surahs will be loaded here -->
+      </div>
+
+      <div class="pagination" id="pagination">
+        <button id="prevBtn" class="page-btn">← Précédent</button>
+        <div id="pageNumbers" class="page-numbers"></div>
+        <button id="nextBtn" class="page-btn">Suivant →</button>
+      </div>
+
+      <!-- Surprise Modal -->
+      <div id="surpriseModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Sourate surprise</h2>
+          </div>
+          <div class="modal-body">
+            <div id="surpriseContent">
+              <p class="surprise-number" id="surpriseNumber"></p>
+              <h3 id="surpriseName"></h3>
+              <p id="surpriseReciter"></p>
+              <p id="surpriseVerses"></p>
+            </div>
+            <audio id="surpriseAudio" controls></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
